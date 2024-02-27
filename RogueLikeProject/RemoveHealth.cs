@@ -11,9 +11,9 @@ namespace RogueLikeProject
     {
         public void Trigger(Characteristics specs)
         {
-            if(specs.IsInRoom == RoomType.Trap)
+            if(specs.CurrentRoom.RoomType == RoomType.Trap)
             {
-                int removeHealth = Trap.Damage;
+                int removeHealth = ((Trap)specs.CurrentRoom.RoomContent).Damage;
                 Console.WriteLine($"You fall on a trap and lose {removeHealth} HP !\n");
                 specs.Health -= removeHealth;
             }

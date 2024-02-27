@@ -8,7 +8,7 @@ namespace RogueLikeProject
 {
     internal class Trap : Encounter
     {
-        public static int Damage { get; set; }
+        public int Damage { get; set; }
 
         public Trap(int damage)
         {

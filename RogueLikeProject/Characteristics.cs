@@ -11,14 +11,14 @@ namespace RogueLikeProject
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Speed { get; set; }
-        public RoomType IsInRoom { get; set; }
+        public Room CurrentRoom { get; set; }
 
         public Characteristics(int health, int attack, int speed)
         {
             Health = health;
             Attack = attack;
             Speed = speed;
-            IsInRoom = new RoomType();
+            CurrentRoom = null;
     }
 
         

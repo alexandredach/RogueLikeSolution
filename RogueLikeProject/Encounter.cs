@@ -11,8 +11,6 @@ namespace RogueLikeProject
         // -> Trap, Monster, Item
         
 
-
-
         // méthode Meet(Adventurer)
     }
 }

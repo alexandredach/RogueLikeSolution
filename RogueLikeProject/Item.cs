@@ -8,13 +8,22 @@ namespace RogueLikeProject
 {
     internal class Item : Encounter
     {
-        public static int Heal { get; set; }
-        public static string ItemType { get; set; }
+        public int Heal { get; set; }
+        public string ItemType { get; set; }
 
-        public Item(int heal, string typeName)
+        public Item(int heal)
         {
             Heal = heal;
-            ItemType = typeName;
+            if(heal < 30)
+            {
+                ItemType = "small potion";
+            } else if (heal < 50)
+            {
+                ItemType = "medium potion";
+            } else
+            {
+                ItemType = "big potion";
+            }
         }
     }
 }

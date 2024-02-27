@@ -12,7 +12,6 @@ namespace RogueLikeProject
         // doit juste avoir les propriétés Characteristics > pas d'héritage
         public Characteristics Specs { get; set; }
         public List<ITriggerable> Triggerables { get; set; }
-        
 
         public Adventurer(string name)
         {
@@ -23,17 +22,25 @@ namespace RogueLikeProject
             Triggerables.Add(new AddHealth());
         }
 
-        public void GetInRoom(int roomIndex)
+        public void GetInRoom(int roomNumber)
         {
-            Console.WriteLine($"You get in room {roomIndex}");
-            Encounter currentRoom = Room.RoomList[roomIndex];
-            if (Room.RoomList[roomIndex].RoomType == RoomType.Trap)
+            Console.WriteLine($"You get in room {roomNumber}");
+            Room currentRoom = null;
+            foreach(Room room in Dungeon.RoomList)
             {
-                this.Specs.IsInRoom = RoomType.Trap;
+                if (room.RoomIndex == roomNumber)
+                {
+                    currentRoom = room;
+                }
+            }
+            if (currentRoom.RoomType == RoomType.Trap)
+            {
+                this.Specs.CurrentRoom = currentRoom;
                 Triggerables[0].Trigger(this.Specs);
-            } else if (Room.RoomList[roomIndex].RoomType == RoomType.Item)
+            }
+            else if (currentRoom.RoomType == RoomType.Item)
             {
-                this.Specs.IsInRoom = RoomType.Item;
+                this.Specs.CurrentRoom = currentRoom;
                 Triggerables[1].Trigger(this.Specs);
             }
         }

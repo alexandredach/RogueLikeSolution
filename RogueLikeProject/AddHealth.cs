@@ -10,10 +10,10 @@ namespace RogueLikeProject
     {
         public void Trigger(Characteristics specs)
         {
-            if (specs.IsInRoom == RoomType.Item)
+            if (specs.CurrentRoom.RoomType == RoomType.Item)
             {
-                int addHealth = Item.Heal;
-                Console.WriteLine($"You get a {Item.ItemType} ! {addHealth} HP\n");
+                int addHealth = ((Item)specs.CurrentRoom.RoomContent).Heal;
+                Console.WriteLine($"You get a {((Item)specs.CurrentRoom.RoomContent).ItemType} ! +{addHealth} HP\n");
                 specs.Health += addHealth;
             }
         }
