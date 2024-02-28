@@ -16,9 +16,15 @@ namespace RogueLikeProject
             playerSpecs.Health -= damage;
             Console.Clear();
             Console.WriteLine($"[{playerSpecs.Name} | HP {playerSpecs.Health}]\n");
+            TrapScreen();
             Console.WriteLine($"You get in room {playerSpecs.CurrentRoom.RoomIndex}");
             Console.WriteLine($"You fall on a trap and lose {damage} HP !\n");
             
+        }
+
+        public void TrapScreen()
+        {
+            Console.WriteLine("        .                .                :      .                         \r\n        :                :                :      :                         \r\n        :                :     .         .:      :                         \r\n        :   ..           ::    :       . ::      :        .                \r\n        :.  :.    :      :;    :      :. ::     ::       ..                \r\n       .::  ::   .:      :;    :.     :. ::.    ::.      ::                \r\n       .::  ::   .;     .:;    ::     :. ::.    ::.      ::                \r\n       :::  :;   .;     .:;.  .:;     ::::;.    :::      ::                \r\n       ::;  :;   :::    .:;:  ::;    .:::::.    :::     .:;                \r\n       ::;. :;:  :::    ::::  ::;    ::;::::   .:::     ::;                \r\n       ::;:.:::  ::;     ..   ::;.   ::;.      .:::     ::;.               \r\n           ::;;  ::;          ::;:   ::;.      .:::     :::.               \r\n           :::;  ::;.         :::.  .::;:              .::::               \r\n            ...  ::;.               .::;;              .:::;               \r\n                .::;:               .:::;               ...                \r\n                .::;:                   .                       \n");
         }
     }
 }

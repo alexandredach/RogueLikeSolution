@@ -14,8 +14,14 @@ namespace RogueLikeProject
             playerSpecs.Health += heal;
             Console.Clear();
             Console.WriteLine($"[{playerSpecs.Name} | HP {playerSpecs.Health}]\n");
+            PotionScreen();
             Console.WriteLine($"You get in room {playerSpecs.CurrentRoom.RoomIndex}");
             Console.WriteLine($"You get a {((Item)playerSpecs.CurrentRoom.RoomContent).ItemType} ! +{heal} HP\n");
+        }
+        public void PotionScreen()
+        {
+            Console.WriteLine("       .+++*.       \r\n      ..:---:.      \r\n       .:..:.       \r\n        :..:        \r\n        ...:        \r\n        ...:        \r\n       ....:.       \r\n     ........:.     \r\n   .:.:-====-:.:.   \r\n  .:==++++++++++=.  \r\n  .=-=========+++:  \r\n  .=-=========+++.  \r\n   .++=====+++*+:   \r\n     .-+****+-.     \n");
+
         }
     }
 }

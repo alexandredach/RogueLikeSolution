@@ -69,7 +69,7 @@ namespace RogueLikeProject
             Console.ReadLine();
             facingMonster.Specs.Health -= attackValue;
             ClearScreen(playerSpecs, facingMonster);
-            Console.WriteLine($"You give {playerSpecs.Attack * 4} damage to {facingMonster.Name}");
+            Console.WriteLine($"You give {attackValue} damage to {facingMonster.Name}");
         }
         public void MonsterAttack(Characteristics playerSpecs, Monster facingMonster)
         {
@@ -79,13 +79,30 @@ namespace RogueLikeProject
             Console.ReadLine();
             playerSpecs.Health -= attackValue;
             ClearScreen(playerSpecs, facingMonster);
-            Console.WriteLine($"{facingMonster.Name} gives you {facingMonster.Specs.Attack * 4} damages");
+            Console.WriteLine($"{facingMonster.Name} gives you {attackValue} damages");
         }
 
         public void ClearScreen(Characteristics playerSpecs, Monster facingMonster)
         {
             Console.Clear();
             Console.WriteLine($"[{playerSpecs.Name} | HP {playerSpecs.Health}] [{facingMonster.Name} | HP {facingMonster.Specs.Health}]\n");
+            if(facingMonster.Name == "Dragon")
+            {
+                DragonScreen();
+            } else if (facingMonster.Name == "Giant Spider")
+            {
+                SpiderScreen();
+            }
+        }
+
+        public void DragonScreen()
+        {
+            Console.WriteLine("                 ___====-_  _-====___\r\n           _--^^^#####//      \\\\#####^^^--_\r\n        _-^##########// (    ) \\\\##########^-_\r\n       -############//  |\\^^/|  \\\\############-\r\n     _/############//   (@::@)   \\\\############\\_\r\n    /#############((     \\\\//     ))#############\\\r\n   -###############\\\\    (oo)    //###############-\r\n  -#################\\\\  / VV \\  //#################-\r\n -###################\\\\/      \\//###################-\r\n_#/|##########/\\######(   /\\   )######/\\##########|\\#_\r\n|/ |#/\\#/\\#/\\/  \\#/\\##\\  |  |  /##/\\#/  \\/\\#/\\#/\\#| \\|\r\n`  |/  V  V  `   V  \\#\\| |  | |/#/  V   '  V  V  \\|  '\r\n   `   `  `      `   / | |  | | \\   '      '  '   '\r\n                    (  | |  | |  )\r\n                   __\\ | |  | | /__\r\n                  (vvv(VVV)(VVV)vvv)\n");
+        }
+
+        public void SpiderScreen()
+        {
+            Console.WriteLine("              (\r\n               )\r\n              (\r\n        /\\  .-\"\"\"-.  /\\\r\n       //\\\\/  ,,,  \\//\\\\\r\n       |/\\| ,;;;;;, |/\\|\r\n       //\\\\\\;-\"\"\"-;///\\\\\r\n      //  \\/   .   \\/  \\\\\r\n     (| ,-_| \\ | / |_-, |)\r\n       //`__\\.-.-./__`\\\\\r\n      // /.-(() ())-.\\ \\\\\r\n     (\\ |)   '---'   (| /)\r\n      ` (|           |) `\r\n        \\)           (/\n");
         }
     }
 }

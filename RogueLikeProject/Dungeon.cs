@@ -22,7 +22,7 @@ namespace RogueLikeProject
             RoomList.Add(new Room(RoomType.Item, 40));
             RoomList.Add(new Room(RoomType.Item, 10));
             RoomList.Add(new Room(RoomType.Monster, 3));
-            RoomList.Add(new Room(RoomType.Item, 30));
+            RoomList.Add(new Room(RoomType.Item, 60));
             RoomList.Add(new Room(RoomType.Monster, 7));
         }
 
@@ -30,7 +30,7 @@ namespace RogueLikeProject
         {
             MonsterIndex = 0;
             MonstersList = new List<Monster>();
-            MonstersList.Add(new Monster("Dragon", 100, 1));
+            MonstersList.Add(new Monster("Giant Spider", 100, 1));
             MonstersList.Add(new Monster("Dragon", 100, 5));
         }
     }

@@ -53,6 +53,7 @@ namespace RogueLikeProject
         {
             int currentRoom = 1;
             ClearScreen();
+            DunjeonScreen();
             Console.WriteLine("You are face to the dungeon");
 
             while (currentRoom <= Dungeon.RoomList.Count && Specs.Health > 0)
@@ -64,11 +65,14 @@ namespace RogueLikeProject
             }
             if(Specs.Health <= 0)
             {
+                ClearScreen();
+                DeathScreen();
                 Console.WriteLine($"You are dead... \nGAME OVER");
             } else
             {
                 ClearScreen();
-                Console.WriteLine($"You found the exit !\nDUNGEON FINISHED");
+                TriforceScreen();
+                Console.WriteLine($"You got the Triforce and found the exit !\nDUNGEON FINISHED");
             }
         }
 
@@ -76,6 +80,21 @@ namespace RogueLikeProject
         {
             Console.Clear();
             Console.WriteLine($"[{Name} | HP {Specs.Health}]\n");
+        }
+
+        public void DunjeonScreen()
+        {
+            Console.WriteLine("                                  |>>>\r\n                                  |\r\n                    |>>>      _  _|_  _         |>>>\r\n                    |        |;| |;| |;|        |\r\n                _  _|_  _    \\\\.    .  /    _  _|_  _\r\n               |;|_|;|_|;|    \\\\:. ,  /    |;|_|;|_|;|\r\n               \\\\..      /    ||;   . |    \\\\.    .  /\r\n                \\\\.  ,  /     ||:  .  |     \\\\:  .  /\r\n                 ||:   |_   _ ||_ . _ | _   _||:   |\r\n                 ||:  .|||_|;|_|;|_|;|_|;|_|;||:.  |\r\n                 ||:   ||.    .     .      . ||:  .|\r\n                 ||: . || .     . .   .  ,   ||:   |       \\,/\r\n                 ||:   ||:  ,  _______   .   ||: , |            /`\\\r\n                 ||:   || .   /+++++++\\    . ||:   |\r\n                 ||:   ||.    |+++++++| .    ||: . |\r\n              __ ||: . ||: ,  |+++++++|.  . _||_   |\r\n     ____--`~    '--~~__|.    |+++++__|----~    ~`---,              ___\r\n-~--~                   ~---__|,--~'                  ~~----_____-~'   `~----~~\n");
+        }
+
+        public void DeathScreen()
+        {
+            Console.WriteLine("      ,-=-.       ______     _\r\n     /  +  \\     />----->  _|1|_\r\n     | ~~~ |    // -/- /  |_ H _|\r\n     |R.I.P|   //  /  /     |S|\r\n\\vV,,|_____|V,//_____/VvV,v,|_|/,,vhjwv/,\n");
+        }
+
+        public void TriforceScreen()
+        {
+            Console.WriteLine("                    ::                    \r\n                   -@@=                   \r\n                  =@@@@+                  \r\n                 +@@@@@@*.                \r\n                *@@@@@@@@*.               \r\n               #@@@@@@@@@@%               \r\n             .@@@@@@@@@@@@@@.             \r\n            :@@@@@@@@@@@@@@@@:            \r\n           =@@@@@@@@@@@@@@@@@@=           \r\n          -++++++++++++++++++++-          \r\n         +@+                  +@*         \r\n       .*@@@#                #@@@*.       \r\n      .*@@@@@%              %@@@@@#:      \r\n     :#@@@@@@@@:          .%@@@@@@@%:     \r\n    -%@@@@@@@@@@-        -%@@@@@@@@@%-    \r\n   -@@@@@@@@@@@@@=      =@@@@@@@@@@@@@-   \r\n  =@@@@@@@@@@@@@@@+    =@@@@@@@@@@@@@@@=  \r\n +@@@@@@@@@@@@@@@@@*. +@@@@@@@@@@@@@@@@@+ \r\n=##################*==*##################=\n");
         }
 
         public override string ToString()
