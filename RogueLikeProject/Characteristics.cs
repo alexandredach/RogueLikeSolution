@@ -8,13 +8,15 @@ namespace RogueLikeProject
 {
     internal class Characteristics
     {
+        public string Name { get; set; }
         public int Health { get; set; }
         public int Attack { get; set; }
         public int Speed { get; set; }
         public Room CurrentRoom { get; set; }
 
-        public Characteristics(int health, int attack, int speed)
+        public Characteristics(string name, int health, int attack, int speed)
         {
+            Name = name;
             Health = health;
             Attack = attack;
             Speed = speed;
