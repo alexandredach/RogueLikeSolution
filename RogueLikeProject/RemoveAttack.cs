@@ -88,21 +88,16 @@ namespace RogueLikeProject
             Console.WriteLine($"[{playerSpecs.Name} | HP {playerSpecs.Health}] [{facingMonster.Name} | HP {facingMonster.Specs.Health}]\n");
             if(facingMonster.Name == "Dragon")
             {
-                DragonScreen();
+                Screens.DragonScreen();
             } else if (facingMonster.Name == "Giant Spider")
             {
-                SpiderScreen();
+                Screens.SpiderScreen();
+            } else if (facingMonster.Name == "Skeleton")
+            {
+                Screens.SkeletonScreen();
             }
         }
 
-        public void DragonScreen()
-        {
-            Console.WriteLine("                 ___====-_  _-====___\r\n           _--^^^#####//      \\\\#####^^^--_\r\n        _-^##########// (    ) \\\\##########^-_\r\n       -############//  |\\^^/|  \\\\############-\r\n     _/############//   (@::@)   \\\\############\\_\r\n    /#############((     \\\\//     ))#############\\\r\n   -###############\\\\    (oo)    //###############-\r\n  -#################\\\\  / VV \\  //#################-\r\n -###################\\\\/      \\//###################-\r\n_#/|##########/\\######(   /\\   )######/\\##########|\\#_\r\n|/ |#/\\#/\\#/\\/  \\#/\\##\\  |  |  /##/\\#/  \\/\\#/\\#/\\#| \\|\r\n`  |/  V  V  `   V  \\#\\| |  | |/#/  V   '  V  V  \\|  '\r\n   `   `  `      `   / | |  | | \\   '      '  '   '\r\n                    (  | |  | |  )\r\n                   __\\ | |  | | /__\r\n                  (vvv(VVV)(VVV)vvv)\n");
-        }
-
-        public void SpiderScreen()
-        {
-            Console.WriteLine("              (\r\n               )\r\n              (\r\n        /\\  .-\"\"\"-.  /\\\r\n       //\\\\/  ,,,  \\//\\\\\r\n       |/\\| ,;;;;;, |/\\|\r\n       //\\\\\\;-\"\"\"-;///\\\\\r\n      //  \\/   .   \\/  \\\\\r\n     (| ,-_| \\ | / |_-, |)\r\n       //`__\\.-.-./__`\\\\\r\n      // /.-(() ())-.\\ \\\\\r\n     (\\ |)   '---'   (| /)\r\n      ` (|           |) `\r\n        \\)           (/\n");
-        }
+        
     }
 }
