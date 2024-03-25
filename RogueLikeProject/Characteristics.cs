@@ -21,8 +21,6 @@ namespace RogueLikeProject
             Attack = attack;
             Speed = speed;
             CurrentRoom = null;
-    }
-
-        
+        }
     }
 }
